@@ -1,0 +1,229 @@
+.tea-about {
+   background-color: #000000;
+   color: #ffffff;
+   font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+.tea-about__wrap {
+   max-width: 100rem;
+   margin-inline: auto;
+}
+
+.tea-about__inner {
+   display: flex;
+   flex-direction: column;
+   gap: 1.1435rem;
+   width: 85.375rem;
+   max-width: 100%;
+   margin-inline: auto;
+   padding-block: 1.1544rem 0.9448rem;
+}
+
+.tea-about__banner {
+   position: relative;
+   overflow: hidden;
+   background-color: #000000;
+}
+
+.tea-about__banner--heritage {
+   height: 16.1396rem;
+}
+
+.tea-about__banner--founder {
+   height: 20.3052rem;
+}
+
+.tea-about__video {
+   position: absolute;
+   inset: 0;
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.tea-about__video--heritage {
+   opacity: 0.59;
+   object-position: 50% 53.13%;
+}
+
+.tea-about__video--founder {
+   opacity: 0.69;
+   object-position: 50% 25.65%;
+}
+
+.tea-about__content {
+   position: relative;
+   z-index: 1;
+   display: flex;
+   flex-direction: column;
+}
+
+.tea-about__content--heritage {
+   align-items: flex-end;
+   padding: 2.3769rem 2.2188rem 0 0;
+}
+
+.tea-about__content--founder {
+   align-items: flex-start;
+   padding: 4.9367rem 0 0 4.325rem;
+}
+
+.tea-about__eyebrow {
+   margin: 0 0 0.09rem;
+   font-size: 0.9167rem;
+   font-weight: 400;
+   line-height: 1.25rem;
+   white-space: nowrap;
+   text-shadow: 0 0.0344rem 0.2578rem rgba(0, 0, 0, 0.6);
+}
+
+.tea-about__eyebrow--founder {
+   margin-bottom: 0.1166rem;
+   font-weight: 700;
+   text-transform: uppercase;
+}
+
+.tea-about__title {
+   margin: 0;
+   font-weight: 800;
+   text-transform: uppercase;
+   white-space: nowrap;
+}
+
+.tea-about__title--heritage {
+   margin-bottom: -0.2606rem;
+   font-size: 3.5rem;
+   line-height: 4.875rem;
+   text-shadow: 0 0.1313rem 0.9844rem rgba(0, 0, 0, 0.6);
+}
+
+.tea-about__title--founder {
+   margin-bottom: 0.642rem;
+   font-size: 2.9166rem;
+   line-height: 4.0625rem;
+   text-shadow: 0 0.1094rem 0.8203rem rgba(0, 0, 0, 0.6);
+}
+
+.tea-about__text {
+   margin: 0;
+   font-size: 0.9167rem;
+   font-weight: 400;
+   line-height: 1.375rem;
+   letter-spacing: 0.055em;
+   white-space: nowrap;
+   -webkit-text-stroke: 0.0814rem #000000;
+   paint-order: stroke fill;
+}
+
+.tea-about__text--heritage {
+   width: 42.5746rem;
+}
+
+.tea-about__text--strong {
+   margin-bottom: 0.0542rem;
+   font-weight: 600;
+}
+
+.tea-about__btn {
+   position: absolute;
+   z-index: 2;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 0.2rem;
+   height: 1.6897rem;
+   border-radius: 6.25rem;
+   background-color: var(--cream, #f9f4e8);
+   color: var(--wine, #720706);
+   font-size: 0.5694rem;
+   font-weight: 800;
+   line-height: 1;
+   text-decoration: none;
+   white-space: nowrap;
+}
+
+.tea-about__btn--heritage {
+   top: 13.6708rem;
+   left: 1.8438rem;
+   width: 7.6524rem;
+   padding: 0 0.8994rem 0 1.0703rem;
+}
+
+.tea-about__btn--founder {
+   top: 17.4353rem;
+   right: 2.1247rem;
+   width: 12.5459rem;
+   padding: 0 1.4563rem 0 1.0269rem;
+}
+
+.tea-about__btn-icon {
+   flex: none;
+   height: auto;
+}
+
+.tea-about__btn-icon--heritage {
+   width: 1.607rem;
+}
+
+.tea-about__btn-icon--founder {
+   width: 2.9068rem;
+}
+
+@media (max-width: 639px) {
+   .tea-about__inner {
+      gap: 1rem;
+      width: 100%;
+      padding-block: 1rem;
+   }
+
+   .tea-about__banner--heritage,
+   .tea-about__banner--founder {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      min-height: 22rem;
+   }
+
+   .tea-about__video--heritage,
+   .tea-about__video--founder {
+      object-position: center;
+   }
+
+   .tea-about__content--heritage,
+   .tea-about__content--founder {
+      align-items: flex-start;
+      padding: 2rem 1.25rem 0;
+   }
+
+   .tea-about__eyebrow {
+      white-space: normal;
+   }
+
+   .tea-about__title--heritage,
+   .tea-about__title--founder {
+      margin-bottom: 0.75rem;
+      font-size: 1.75rem;
+      line-height: 1.2;
+      white-space: normal;
+   }
+
+   .tea-about__text,
+   .tea-about__text--heritage {
+      width: auto;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      white-space: normal;
+   }
+
+   .tea-about__text br {
+      display: none;
+   }
+
+   .tea-about__btn--heritage,
+   .tea-about__btn--founder {
+      position: static;
+      align-self: flex-start;
+      margin: 1.5rem 1.25rem 2rem;
+   }
+}

@@ -1,0 +1,21 @@
+@import url("./hero.css");
+@import url("./about.css");
+@import url("./speccialty.css");
+@import url("./grand.css");
+@import url("./tea-process.css");
+@import url("./tea-store.css");
+@import url("./tea-research.css");
+@import url("./tea-about.css");
+@import url("./tea-news.css");
+@import url("./footer.css");
+
+html {
+   font-size: 0.8399vw;
+   scroll-behavior: smooth;
+}
+
+@media (max-width: 638px) {
+   html {
+      font-size: 4.26667vw;
+   }
+}

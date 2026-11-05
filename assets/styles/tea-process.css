@@ -1,0 +1,414 @@
+
+.tea-process {
+   background-color: var(--wine, #720706);
+   padding: 0;
+   overflow: hidden;
+   font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+ 
+.tea-process__wrap {
+   position: relative;
+   width: 85.4375rem; /* 1367px */
+   max-width: 100%;
+   height: 48.625rem; /* 778px */
+   margin-inline: auto;
+   padding: 0;
+}
+ 
+/* card và col chỉ là lớp bọc, các phần tử con tự định vị theo .tea-process__wrap */
+.tea-process__card {
+   display: block;
+}
+ 
+.tea-process__col {
+   display: contents;
+}
+ 
+/* ---------- Nền ---------- */
+.tea-process__bg-panel {
+   position: absolute;
+   z-index: 1;
+   left: 0;
+   top: 0.1083rem;
+   width: 42.2618rem;
+   height: 38.9563rem;
+   background-color: var(--cream, #f9f4e8);
+}
+ 
+/* Dải đỏ bên trái; ::after là dải kem bên phải */
+.tea-process__stripe {
+   position: absolute;
+   z-index: 2;
+   left: 0;
+   top: 19.1549rem;
+   width: 31.0795rem;
+   height: 6.3152rem;
+   background-color: var(--wine, #720706);
+}
+ 
+.tea-process__stripe::after {
+   content: "";
+   position: absolute;
+   left: 54.3581rem;
+   top: -0.0625rem;
+   width: 31.0169rem;
+   height: 6.3152rem;
+   background-color: var(--cream, #f9f4e8);
+}
+ 
+/* ---------- Chữ (font 14.667px, cao dòng 20px, khung rộng 420.47px) ---------- */
+.tea-process__title,
+.tea-process__desc {
+   position: absolute;
+   z-index: 6;
+   margin: 0;
+   width: 26.2795rem;
+   font-size: 0.9167rem;
+   line-height: 1.25rem;
+}
+ 
+.tea-process__title {
+   font-weight: 800;
+}
+ 
+.tea-process__desc {
+   font-weight: 400;
+   white-space: nowrap; /* xuống dòng theo <br> như Canva */
+   text-indent: 0.28em; /* dấu cách đầu dòng của Canva */
+}
+ 
+.tea-process__col--ripe .tea-process__title,
+.tea-process__col--ripe .tea-process__desc {
+   left: 4.8rem;
+   color: var(--wine, #720706);
+}
+ 
+.tea-process__col--ripe .tea-process__title {
+   top: 3.5076rem;
+}
+ 
+.tea-process__col--ripe .tea-process__desc {
+   top: 4.7576rem;
+}
+ 
+.tea-process__col--raw .tea-process__title,
+.tea-process__col--raw .tea-process__desc {
+   left: 54.2956rem;
+   color: var(--cream, #f9f4e8);
+}
+ 
+.tea-process__col--raw .tea-process__title {
+   top: 3.0208rem;
+}
+ 
+.tea-process__col--raw .tea-process__desc {
+   top: 4.2708rem;
+}
+ 
+/* ---------- Nút (122.58 x 22.14px, chữ 7.7px canh trái cách mép 11px) ---------- */
+.tea-process__btn {
+   position: absolute;
+   z-index: 6;
+   top: 16.4742rem;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   gap: 0.767rem;
+   width: 7.661rem;
+   height: 1.3835rem;
+   padding-left: 0.6869rem;
+   border-radius: 62.4375rem;
+   font-size: 0.4817rem;
+   font-weight: 800;
+   line-height: 1;
+   text-decoration: none;
+   white-space: nowrap;
+}
+ 
+.tea-process__col--ripe .tea-process__btn {
+   left: 13.0168rem;
+}
+ 
+.tea-process__col--raw .tea-process__btn {
+   left: 64.0019rem;
+}
+ 
+.tea-process__btn svg {
+   flex: none;
+   width: 1.3596rem;
+   height: auto;
+}
+ 
+.tea-process__btn--wine {
+   background-color: var(--wine, #720706);
+   color: var(--cream, #f9f4e8);
+}
+ 
+.tea-process__btn--cream {
+   background-color: var(--cream, #f9f4e8);
+   color: var(--wine, #720706);
+}
+ 
+/* ---------- Thumbnails (75.42px, bo góc 16px) ---------- */
+.tea-process__thumbs {
+   position: absolute;
+   z-index: 6;
+   top: 19.9558rem;
+   display: flex;
+   gap: 1.488rem;
+}
+ 
+.tea-process__col--ripe .tea-process__thumbs {
+   left: 8.0326rem;
+}
+ 
+.tea-process__col--raw .tea-process__thumbs {
+   left: 59.2888rem;
+}
+ 
+.tea-process__thumb {
+   position: relative;
+   flex: none;
+   width: 4.7135rem;
+   height: 4.7135rem;
+   border-radius: 1rem;
+   overflow: hidden;
+}
+ 
+.tea-process__thumb img {
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+ 
+/* Ảnh thứ 2 bên trái được Canva phóng to và cắt */
+.tea-process__col--ripe .tea-process__thumb:nth-child(2) img {
+   position: absolute;
+   left: -6.3685rem;
+   top: -5.0006rem;
+   width: 16.743rem;
+   height: 16.743rem;
+   max-width: none;
+}
+ 
+/* Ảnh thứ 2 bên phải: cao hơn khung, canh lệch lên 9.4px */
+.tea-process__col--raw .tea-process__thumb:nth-child(2) img {
+   position: absolute;
+   left: 0;
+   top: -0.5892rem;
+   width: 100%;
+   height: auto;
+}
+ 
+/* ---------- Vòng tròn + hai nửa chén (gốc toạ độ = góc trên trái vòng tròn) ---------- */
+.tea-process__center {
+   position: absolute;
+   z-index: 4;
+   left: 30.2215rem;
+   top: 9.8886rem;
+   width: 24.932rem; /* 398.912px */
+   height: 24.932rem;
+   pointer-events: none;
+}
+ 
+.tea-process__cup {
+   display: contents;
+}
+ 
+.tea-process__back-circle {
+   position: absolute;
+   z-index: 3;
+   inset: 0;
+}
+ 
+.tea-process__back-img {
+   display: block;
+   width: 100%;
+   height: 100%;
+}
+ 
+/* Canva đặt thêm một bản vòng tròn thứ hai xoay -48.26 độ ngay trên bản đầu */
+.tea-process__back-circle::after {
+   content: "";
+   position: absolute;
+   left: 0;
+   top: -0.0421rem;
+   width: 100%;
+   height: 100%;
+   background: url("https://khiemkhiem.my.canva.site/web-tr-g-c-backup-3/_assets/media/55a85a871805b702f1e29eb310b69cb9.png") center / 100% 100% no-repeat;
+   rotate: -48.2552deg;
+}
+ 
+.tea-process__cup-half {
+   position: absolute;
+   overflow: hidden;
+}
+ 
+.tea-process__cup-half img {
+   position: absolute;
+   display: block;
+   max-width: none;
+}
+ 
+/* Nửa trái: khung 263.69 x 411.69 */
+.tea-process__cup-half--left {
+   z-index: 1;
+   left: -1.6793rem;
+   top: -0.2524rem;
+   width: 16.4809rem;
+   height: 25.7305rem;
+}
+ 
+.tea-process__cup-half--left img {
+   left: -0.6951rem;
+   top: 0;
+   width: 17.8709rem;
+   height: 25.7305rem;
+}
+ 
+/* Nửa phải: khung 209.62 x 411.69, ảnh lớn hơn khung và lệch (-22.9px, -48.4px) */
+.tea-process__cup-half--right {
+   z-index: 2;
+   left: 12.0403rem;
+   top: -0.0421rem;
+   width: 13.1012rem;
+   height: 25.7305rem;
+}
+ 
+.tea-process__cup-half--right img {
+   left: -1.4323rem;
+   top: -3.0225rem;
+   width: 19.1338rem;
+   height: 28.753rem;
+}
+ 
+/* ---------- Video (1367 x 195.49), phần nhìn thấy lệch lên 175.75px so với giữa ---------- */
+.tea-process__video-wrap {
+   position: absolute;
+   z-index: 7;
+   left: 0;
+   top: 36.377rem;
+   width: 100%;
+   height: 12.2182rem;
+   overflow: hidden;
+   background-color: #000;
+}
+ 
+.tea-process__video {
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: 50% 30.65%;
+}
+ 
+.tea-process__video-text {
+   position: absolute;
+   top: 5.6864rem;
+   left: 50%;
+   transform: translateX(-50%);
+   width: max-content;
+   margin: 0;
+   font-size: 1.6666rem;
+   font-weight: 800;
+   line-height: 2.3125rem;
+   letter-spacing: 0;
+   white-space: nowrap;
+   text-transform: uppercase;
+   color: #ffffff;
+   text-shadow: 0 0.0625rem 0.4687rem rgba(0, 0, 0, 0.6);
+   pointer-events: none;
+}
+ 
+/* ---------- Mobile: 1rem = 16px tại 375px (html font-size 4.26667vw) ---------- */
+@media (max-width: 638px) {
+   .tea-process {
+      padding-top: 2rem;
+   }
+ 
+   .tea-process__wrap {
+      position: static;
+      width: 100%;
+      height: auto;
+      padding-inline: 1.25rem;
+   }
+ 
+   .tea-process__card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+   }
+ 
+   .tea-process__bg-panel,
+   .tea-process__stripe {
+      display: none;
+   }
+ 
+   .tea-process__col {
+      display: block;
+      padding: 2rem 1.25rem;
+   }
+ 
+   .tea-process__col--ripe {
+      background-color: var(--cream, #f9f4e8);
+      color: var(--wine, #720706);
+   }
+ 
+   .tea-process__col--raw {
+      background-color: var(--wine, #720706);
+      color: var(--cream, #f9f4e8);
+   }
+ 
+   .tea-process__col .tea-process__title,
+   .tea-process__col .tea-process__desc {
+      position: static;
+      width: auto;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      white-space: normal;
+      text-indent: 0;
+   }
+ 
+   .tea-process__desc br {
+      display: none;
+   }
+ 
+   .tea-process__col .tea-process__btn {
+      position: static;
+      margin: 1.25rem auto 0;
+      font-size: 0.75rem;
+   }
+ 
+   .tea-process__col .tea-process__thumbs {
+      position: static;
+      justify-content: center;
+      margin-top: 1.5rem;
+      gap: 0.75rem;
+   }
+ 
+   .tea-process__center {
+      position: relative;
+      left: auto;
+      top: auto;
+      margin: 2rem 0 -4.932rem calc(50% - 9rem);
+      transform-origin: 0 0;
+      scale: 0.722;
+   }
+ 
+   .tea-process__video-wrap {
+      position: relative;
+      top: auto;
+      height: auto;
+      aspect-ratio: 16 / 9;
+   }
+ 
+   .tea-process__video-text {
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      font-size: 1rem;
+      line-height: 1.3;
+      text-align: center;
+      white-space: normal;
+   }
+}

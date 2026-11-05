@@ -1,0 +1,231 @@
+/*
+  Section "Cách chúng tôi hiểu về trà"
+  Quy chuẩn: 16px = 1rem
+*/
+:root {
+  --cream: #f9f4e8;
+  --wine: #720706;
+  --max-width: 100rem; /* 1600px = 100rem */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+.tea {
+  background: var(--wine);
+  color: var(--cream);
+}
+
+.tea__wrap {
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+/* 1212px / 1600px = 75.75% */
+.tea__inner {
+  width: 75.75%;
+  margin-inline: auto;
+  padding-block: 4.8rem; /* 4.8cqw -> 4.8rem */
+}
+
+/* ---------- Head ---------- */
+.tea__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 26.25rem; /* 26.25cqw -> 26.25rem */
+  column-gap: 2rem;                              /* 2cqw -> 2rem */
+  align-items: start;
+}
+
+.tea__title {
+  margin: 0;
+  font-family: "Noto Sans", Arial, sans-serif;
+  font-size: 4.5rem;                             /* 4.5cqw -> 4.5rem */
+  font-weight: 700;
+  line-height: 1.389;
+  text-transform: uppercase;
+}
+
+.tea__title span {
+  display: block;
+}
+
+.tea__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.1rem;                                   /* 1.1cqw -> 1.1rem */
+  min-height: 2.15rem;                           /* 2.15cqw -> 2.15rem */
+  margin-top: 0.4rem;                            /* 0.4cqw -> 0.4rem */
+  padding: 0 1.6rem 0 1rem;                      /* 1.6cqw, 1cqw -> rem */
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--wine);
+  font-size: 0.75rem;                            /* 0.75cqw -> 0.75rem */
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tea__btn svg {
+  width: 2.1rem;                                 /* 2.1cqw -> 2.1rem */
+  height: auto;
+}
+
+.tea__btn:focus-visible,
+.card:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 3px;
+}
+
+.tea__text {
+  font-size: 0.9167rem;                          /* 0.9167cqw -> 0.9167rem (~14.6px) */
+  line-height: 1.364;
+}
+
+.tea__text p {
+  margin: 0;
+}
+
+.tea__text p + p {
+  margin-top: 1.25rem;                           /* 1.25cqw -> 1.25rem */
+}
+
+/* ---------- Cards ---------- */
+.tea__cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.625rem;                                 /* 1.625cqw -> 1.625rem */
+  margin: 2.07rem 0 0;                           /* 2.07cqw -> 2.07rem */
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  position: relative;
+  display: block;
+  aspect-ratio: 283 / 341;
+  overflow: hidden;
+  background: #101010;
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+/* Ảnh dọc: Canva căn đáy khung */
+.card__img--bottom {
+  object-position: center bottom;
+}
+
+/* Lớp tối nhẹ ở đáy để chữ luôn dễ đọc */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 40%);
+  pointer-events: none;
+}
+
+.card__title {
+  position: absolute;
+  z-index: 1;
+  left: 1.36rem;                                 /* 1.36cqw -> 1.36rem */
+  right: 1.36rem;
+  bottom: 1.3rem;                                /* 1.3cqw -> 1.3rem */
+  margin: 0;
+  font-family: "Noto Sans", Arial, sans-serif;
+  font-size: 1.583rem;                           /* 1.583cqw -> 1.583rem */
+  font-weight: 700;
+  line-height: 1.38;
+  text-transform: uppercase;
+}
+
+@media (hover: hover) {
+  .card:hover .card__img {
+    transform: scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card__img {
+    transition: none;
+  }
+}
+
+/* ---------- Tablet (Màn hình vừa) ---------- */
+@media (max-width: 1100px) {
+  .tea__inner {
+    width: 85%;
+  }
+  .tea__title {
+    font-size: 3.5rem;
+  }
+}
+
+/* ---------- Mobile (Màn hình hẹp) ---------- */
+@media (max-width: 638px) {
+  .tea__inner {
+    width: auto;
+    padding: 3rem 1.25rem;
+  }
+
+  .tea__head {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+  }
+
+  .tea__title {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+
+  .tea__btn {
+    gap: 1rem;
+    min-height: 2.5rem;
+    margin-top: 1.25rem;
+    padding: 0 1.5rem 0 1.1rem;
+    font-size: 0.75rem;
+  }
+
+  .tea__btn svg {
+    width: 2.1rem;
+  }
+
+  .tea__text {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  .tea__text p + p {
+    margin-top: 1rem;
+  }
+
+  .tea__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .card__title {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    font-size: 1rem;
+  }
+}

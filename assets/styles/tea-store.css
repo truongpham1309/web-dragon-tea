@@ -1,0 +1,135 @@
+.tea-store {
+   padding-block: 1.4948rem 1.664rem;
+   background-color: #000000;
+   font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+.tea-store__wrap {
+   max-width: 100rem;
+   margin-inline: auto;
+}
+
+.tea-store__banner {
+   position: relative;
+   width: 85.375rem;
+   max-width: 100%;
+   height: 43.4038rem;
+   margin-inline: auto;
+   overflow: hidden;
+}
+
+.tea-store__img {
+   position: absolute;
+   inset: 0;
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: 50% 19.54%;
+}
+
+.tea-store__content {
+   position: relative;
+   z-index: 1;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   padding: 1.9427rem 4.8rem 0;
+   color: #ffffff;
+}
+
+.tea-store__title {
+   margin: 0 0 0.7706rem 1.125rem;
+   font-size: 1.6666rem;
+   font-weight: 800;
+   line-height: 2.3125rem;
+   text-transform: uppercase;
+   white-space: nowrap;
+   text-shadow: 0 0.0625rem 0.4687rem rgba(0, 0, 0, 0.6);
+}
+
+.tea-store__text {
+   max-width: 49.6748rem;
+   margin: 0;
+   font-size: 0.9167rem;
+   font-weight: 400;
+   line-height: 1.25rem;
+   text-indent: 2.8em;
+   white-space: nowrap;
+   text-shadow: 0 0.0344rem 0.2578rem rgba(0, 0, 0, 0.6);
+}
+
+.tea-store__btn {
+   display: inline-flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 13.2483rem;
+   height: 1.6354rem;
+   margin-top: 2.4394rem;
+   padding: 0 1.27rem 0 0.8206rem;
+   border-radius: 6.25rem;
+   background-color: var(--cream, #f9f4e8);
+   color: var(--wine, #720706);
+   font-size: 0.5694rem;
+   font-weight: 800;
+   line-height: 1;
+   text-decoration: none;
+   white-space: nowrap;
+}
+
+.tea-store__btn-icon {
+   flex: none;
+   width: 1.607rem;
+   height: auto;
+}
+
+@media (max-width: 639px) {
+   .tea-store {
+      padding-block: 1.25rem;
+   }
+
+   .tea-store__banner {
+      width: 100%;
+      height: auto;
+      min-height: 34rem;
+   }
+
+   .tea-store__banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.35);
+   }
+
+   .tea-store__img {
+      object-position: center;
+   }
+
+   .tea-store__content {
+      z-index: 2;
+      padding: 2rem 1.25rem;
+   }
+
+   .tea-store__title {
+      margin: 0 0 1rem;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      white-space: normal;
+   }
+
+   .tea-store__text {
+      max-width: none;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      text-indent: 0;
+      white-space: normal;
+   }
+
+   .tea-store__text br {
+      display: none;
+   }
+
+   .tea-store__btn {
+      margin-top: 1.5rem;
+   }
+}
